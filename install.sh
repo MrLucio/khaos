@@ -13,8 +13,8 @@ main() {
 
 	check_arch
 
+	check_dependencies
 	check_package_manager
-	check_gnome_shell
 
 	views_menu
 }

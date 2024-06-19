@@ -33,9 +33,9 @@ Run the installer:
 
 - [ ] Add support for other package managers
 - [ ] Increase support for GNOME
-- [ ] Add Development section
-- [ ] Add Browser section
-- [ ] Add Preset section
+- [x] Add Development section
+- [x] Add Browser section
+- [x] Add Preset section
 - [ ] Improve error management
 - [ ] Add more customization options
 - [ ] Add more documentation

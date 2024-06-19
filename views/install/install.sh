@@ -1,5 +1,5 @@
 source "./views/install/graphical/graphical.sh"
-source "./views/install/development.sh"
+source "./views/install/development/development.sh"
 source "./views/install/browser.sh"
 source "./views/install/preset.sh"
 
@@ -15,5 +15,4 @@ install_menu() {
 		"🔙 Back") break ;;
 		esac
 	done
-
 }

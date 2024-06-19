@@ -1,24 +1,16 @@
-check_package_manager() {
-	if [ -z "$(command -v yay)" ]; then
-		error "This script requires yay to be installed"
-		exit 1
-	fi
-}
+install_packages() {
+	for package in "$@"; do
+		if [ -z "$package" ]; then
+			error "No package specified"
+			exit 1
+		fi
+	done
 
-check_gnome_shell() {
-	if [ -z "$(command -v gnome-shell)" ]; then
-		error "This script requires gnome-shell to be installed"
-		exit 1
-	fi
-}
+	enter_alternate_screen
 
-install_package() {
-	local package=$1
+	yay -S --noconfirm "$@"
+	gum style --bold --underline $'\nAll packages have been installed\n'
+	confirm --affirmative "< Back" --negative '' ''
 
-	if [ -z "$package" ]; then
-		error "No package specified"
-		exit 1
-	fi
-
-	gum spin --title="Downloading $package" -- yay -S --noconfirm "$package" &>/dev/null
+	exit_alternate_screen
 }
